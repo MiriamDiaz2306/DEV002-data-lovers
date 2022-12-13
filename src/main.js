@@ -7,16 +7,12 @@ import {
      pureSpecies,
      dirtyBlood,
      buscadorDePersonajes
-     
-
-     
 } from './data.js';
 
 const characters = data.characters;
 const Libros = data.books;
 const Potions = data.potions;
 const spells = data.spells;
-
 
 //seleccionamos las secciones del DOM
 const sMain_acceso = document.querySelector("#sMagosHechizos"),
@@ -26,7 +22,8 @@ const sMain_acceso = document.querySelector("#sMagosHechizos"),
       sPosionesMain_acceso = document.querySelector("#sPosionesMain"),    
       nav_acesso = document.querySelector("#menu-navegacion"),
       navMenuQuery = document.querySelector("#menuQuery"),
-      buscadorInput= document.querySelector("#BuscadorDePersonajes");
+      buscadorInput = document.querySelector("#BuscadorDePersonajes"),
+      containerPorcentaje = document.querySelector("#porcentajeDom")
 //seleccionamos el select
 const selecteFilter = document.querySelector("#filtroId");
 //DIV contenedores de tarjetas
@@ -109,36 +106,95 @@ sBtnCaptura_Posiones.addEventListener("click", () => {
     sMain_acceso.classList.add("sMainPrincipal");
 });
 navMenuQuery.addEventListener("click", () => {
-    nav_acesso.classList.toggle("menu-desplegable")
+    nav_acesso.classList.add("menu-desplegable")
 })
+
+// Tarjeta Vacia
 const tarjetasDePersonajes = (tarjeta) => {
     let almacenTarjetas = [];
     
     tarjeta.forEach(elemt => {
     let creacionDiv = document.createElement("div");
-    creacionDiv.classList.add("tarjetasPersonajes")
-    let creacionFigure = document.createElement("figure")
+    creacionDiv.classList.add("tarjetasPersonajes");
+    let creacionFigure = document.createElement("figure");
     creacionFigure.innerHTML = `<img src="img/profile.png">`;
+
+    let creacionPoPup = document.createElement("div");
+        creacionPoPup.classList.add("creacionPoPup");
+    let hijoUnoCreacionPoPup = document.createElement("div");
+        hijoUnoCreacionPoPup.classList.add("hijoUnoCreacionPoPup");
+    let hijoDosCreacionPoPup = document.createElement("div"); 
+        hijoDosCreacionPoPup.classList.add("hijoDosCreacionPoPup");
+    let figuraHijoUno = document.createElement("figure"),
+    tituloHijoDos = document.createElement("h2"),
+    parrafoUno = document.createElement("p"),
+    parrafoDos = document.createElement("p"),
+    parrafoTres = document.createElement("p"),
+    ParrafoCuatro = document.createElement("p");
+    figuraHijoUno.innerHTML = `<img src="img/profile.png">;`
+    let iconoSalir = document.createElement("span")
+    iconoSalir.innerHTML = `<i class="fa-solid fa-x"></i>`
 
     const nombres = document.createElement("h2");
         nombres.classList.add("HarryP");
         nombres.textContent = elemt.name;
         sPersonajesMain_Acceso.appendChild(sContainerSectionPersonajes);
+
         sContainerSectionPersonajes.appendChild(creacionDiv);
         creacionDiv.appendChild(creacionFigure);
         creacionDiv.appendChild(nombres);
+
+        creacionDiv.appendChild(creacionPoPup)
+
+        creacionPoPup.appendChild(hijoUnoCreacionPoPup);
+        creacionPoPup.appendChild(hijoDosCreacionPoPup);
+        creacionPoPup.appendChild(iconoSalir);
+        hijoUnoCreacionPoPup.appendChild(figuraHijoUno);
+        
+        hijoDosCreacionPoPup.appendChild(tituloHijoDos);
+        hijoDosCreacionPoPup.appendChild(parrafoUno);
+        hijoDosCreacionPoPup.appendChild(parrafoDos);
+        hijoDosCreacionPoPup.appendChild(parrafoTres);
+        hijoDosCreacionPoPup.appendChild(ParrafoCuatro);
+        
+        tituloHijoDos.textContent = elemt.name
+        parrafoUno.textContent = elemt.gender
+        parrafoDos.textContent = elemt.house
+        parrafoTres.textContent = elemt.ancestry
+        ParrafoCuatro.textContent = elemt.species
+
+        creacionDiv.addEventListener("click", () => {
+            creacionPoPup.classList.toggle("creacionPoPupUno")       
+        })
         almacenTarjetas.push(creacionDiv); 
     }) 
     return almacenTarjetas;
 }
+
+//tarjetas que se ven
 const allCharacters = () => {
-        
+    //iteramos los personajes y pasan a ser elemt para imprimirlos en su div  
     characters.forEach(elemt => {
     let creacionDiv = document.createElement("div");
     creacionDiv.classList.add("tarjetasPersonajes")
     let creacionFigure = document.createElement("figure");
     creacionFigure.innerHTML = `<img src="img/profile.png">`;
-
+    //creamos la esctructura del poPup
+    let creacionPoPup = document.createElement("div");
+    creacionPoPup.classList.add("creacionPoPup");
+    let hijoUnoCreacionPoPup = document.createElement("div");
+    hijoUnoCreacionPoPup.classList.add("hijoUnoCreacionPoPup");
+    let hijoDosCreacionPoPup = document.createElement("div"); 
+    hijoDosCreacionPoPup.classList.add("hijoDosCreacionPoPup");
+    let figuraHijoUno = document.createElement("figure"),
+        tituloHijoDos = document.createElement("h2"),
+        parrafoUno = document.createElement("p"),
+        parrafoDos = document.createElement("p"),
+        parrafoTres = document.createElement("p"),
+        ParrafoCuatro = document.createElement("p");
+    figuraHijoUno.innerHTML = `<img src="img/profile.png">;`
+    let iconoSalir = document.createElement("span")
+        iconoSalir.innerHTML = `<i class="fa-solid fa-x"></i>`
     const nombres = document.createElement("h2");
         nombres.classList.add("HarryP")
         nombres.textContent = elemt.name;
@@ -146,9 +202,35 @@ const allCharacters = () => {
         sContainerSectionPersonajes.appendChild(creacionDiv);
         creacionDiv.appendChild(creacionFigure);
         creacionDiv.appendChild(nombres)
-    }) 
+
+        creacionDiv.appendChild(creacionPoPup)
+
+        creacionPoPup.appendChild(hijoUnoCreacionPoPup);
+        creacionPoPup.appendChild(hijoDosCreacionPoPup);
+        creacionPoPup.appendChild(iconoSalir);
+        hijoUnoCreacionPoPup.appendChild(figuraHijoUno);
+        
+        hijoDosCreacionPoPup.appendChild(tituloHijoDos);
+        hijoDosCreacionPoPup.appendChild(parrafoUno);
+        hijoDosCreacionPoPup.appendChild(parrafoDos);
+        hijoDosCreacionPoPup.appendChild(parrafoTres);
+        hijoDosCreacionPoPup.appendChild(ParrafoCuatro);
+        
+        tituloHijoDos.textContent = elemt.name
+        parrafoUno.textContent =  `Genero: ${elemt.gender}`
+        parrafoDos.textContent = `House: ${elemt.house}`
+        parrafoTres.textContent = `Ancestry: ${elemt.ancestry}`
+        ParrafoCuatro.textContent = `Species: ${elemt.species}`
+        
+        creacionDiv.addEventListener("click", () => {
+            creacionPoPup.classList.toggle("creacionPoPupUno")       
+        })
+       
+    })  
+    
 }
 allCharacters();
+
 //Se imprimen en orden alfabetico
 selecteFilter.addEventListener("change", () => {
     if(selecteFilter.value === "a_z"){
@@ -183,6 +265,9 @@ selecteFilter.addEventListener("change", ()  => {
             sContainerSectionPersonajes.classList.remove("grid_Puros");
         sContainerSectionPersonajes.classList.remove("grid_Impuros");
         })
+        let calculoPersonaje = personajes(characters).length * 100 / characters.length;
+        let calculoFinal = Math.floor(calculoPersonaje);
+        containerPorcentaje.textContent = `${calculoFinal}%`;
     }
 })
 //Se imprimen no Humanos
@@ -198,12 +283,16 @@ selecteFilter.addEventListener("change", () => {
                 sContainerSectionPersonajes.classList.remove("grid_Puros");
                 sContainerSectionPersonajes.classList.remove("grid_Impuros");
             })
+        let calculoPersonaje = personajes_No_Humanos(characters).length * 100 / characters.length;
+        let calculoFinal = Math.floor(calculoPersonaje);
+        containerPorcentaje.textContent = `${calculoFinal}%`;
     }
 })
-//Se filtro sandgre pura sin utilizar el forEach ;)
+//Se filtro sangre pura sin utilizar el forEach ;)
 selecteFilter.addEventListener("change", () => {
     if(selecteFilter.value === "sangre_Pura"){
         sContainerSectionPersonajes.innerHTML = " ";
+        containerPorcentaje.innerHTML = " "
         const personajes_Puros = pureSpecies(characters);
         tarjetasDePersonajes(personajes_Puros);
         sContainerSectionPersonajes.classList.add("grid_Puros");
@@ -211,10 +300,12 @@ selecteFilter.addEventListener("change", () => {
         sContainerSectionPersonajes.classList.remove("grid_No_Humanos");
         sContainerSectionPersonajes.classList.remove("grid_Humanos");
     }
+       
 })
 selecteFilter.addEventListener("change", () => {
     if(selecteFilter.value === "sangre_Impura"){
         sContainerSectionPersonajes.innerHTML = " ";
+        containerPorcentaje.innerHTML = " "
         const personajes_Impuros = dirtyBlood(characters);
         tarjetasDePersonajes(personajes_Impuros);
         sContainerSectionPersonajes.classList.add("grid_Impuros");
@@ -222,6 +313,7 @@ selecteFilter.addEventListener("change", () => {
         sContainerSectionPersonajes.classList.remove("grid_No_Humanos");
         sContainerSectionPersonajes.classList.remove("grid_Humanos");
     }
+        
 })
 //Se vuelven a imprimir todos
 selecteFilter.addEventListener("change", () => {
@@ -232,7 +324,9 @@ selecteFilter.addEventListener("change", () => {
         sContainerSectionPersonajes.classList.remove("grid_Impuros");
         sContainerSectionPersonajes.classList.remove("grid_Puros");
         allCharacters();
+        containerPorcentaje.innerHTML = " "
     }
+   
 })
 
 //Portada de libros
@@ -247,7 +341,6 @@ const portada_Libros = () => {
     creacionDiv.classList.add("sContainerLibrosJS");
 
     sContainerSectionLibros.appendChild(creacionDiv);
-
     creacionDiv.appendChild(creacionH2);
     creacionDiv.appendChild(creacionH3);
     creacionDiv.appendChild(creacionH3Autor);
@@ -257,8 +350,6 @@ const portada_Libros = () => {
     creacionH3.textContent = elemt.releaseDay;
     creacionH3Autor.textContent = elemt.author;
     creacionP.textContent = elemt.description;
-
-
     })
 }
 portada_Libros();
@@ -309,6 +400,7 @@ buscadorInput.addEventListener("input",(event)=>{
     sContainerSectionPersonajes.appendChild(elemt)
     })
 })
+
 
 
 

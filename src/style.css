@@ -55,6 +55,7 @@ select#filtroId{
     padding: 5px;
     font-weight: bold;
     border-radius: 5px;
+    outline: none;
 }
 /*--------------CSS SELECT-----------------------*/
 .menu-navegacion{
@@ -85,12 +86,6 @@ input.sBtnPersonajesNav{
     padding-top: 21vh;
 
 }
-/* .sHijoMagosHechizos{
-    width: 100%;
-    height: 40vh;
-    display: flex;
-    justify-content: space-around;
-} */
 .scontenedoresMain{
     background-color: #00000080;
     border: 1px solid #783e03;
@@ -111,7 +106,6 @@ input.sBtnPersonajesNav{
 }
 .sHechizos img{
     width: 87%;
-    /* height: 34vh; */
 }
 .sHechizos p{
     color: goldenrod;
@@ -128,14 +122,12 @@ input.sBtnPersonajesNav{
 }
 .mLibros img{
     width: 87%;
-    /* height: 34vh; */
 }
 .mLibrosHijoMagosH p{
     color: goldenrod;
 }
 .mHechizos img{
     width: 87%;
-    /* height: 34vh */
     }
 .mHechizos p{
     color:goldenrod
@@ -299,6 +291,23 @@ width: 52%;
 input[type="submit"]{
     cursor: pointer;
 }
+#BuscadorDePersonajes{
+    height: 27px;
+    border-radius: 15px;
+    position: absolute;
+    top:20vh;
+    left: 38%;
+    background-color: #d1950e;
+    outline: none;
+    padding-left: 5px;
+    color: #783e03;
+}
+::placeholder{
+    padding-left: 5px;
+    color: #783e03;
+    font-weight: bold;
+}
+
 /* desktop */
 @media only screen and (min-width: 900px) {
 .menuQuery {
@@ -325,97 +334,176 @@ input[type="submit"]{
     display: flex;
     justify-content: space-around;
    }
-
+   .creacionPoPup{
+    display:none;
+    background-color: gold;
+    position: fixed;
+    top: 13%;
+    left: 14%;
+    width: 73vw;
+    height: 86vh;
+    z-index: 1;
+}
+.creacionPoPup span {
+    position: absolute;
+    top: 4%;
+    font-size: 1.5rem;
+    right: 2%;
+}
+.creacionPoPupUno{
+    display: flex;
+    align-items: center;
+    background-color: goldenrod;
+    color: #000;
+    border-radius: 15px;
+}
+.hijoUnoCreacionPoPup{
+    width: 50%;
+}
+.hijoUnoCreacionPoPup img{
+    width: 77%;
+    border: 3px solid black;
+}
+.hijoDosCreacionPoPup{
+    width: 50%;
+    line-height: 70px;
+    font-size: 1.5rem;
+}
+.porcentajeDom{
+    position: absolute;
+    top: 20.5vh;
+    left: 12%;
+    color: red;
+    font-size: 1.4rem;
+}
 }
 
-
 /* tablet */
-@media only screen and ((max-width: 899px) and (min-width: 450px)) {
+@media only screen and ((max-width: 900px) and (min-width: 449px)) {
     .menuQuery{
-        background-color: #0a0401;
-        text-align: end;
-        display: none;
+    background-color: #0a0401;
+    text-align: end;
+    display: none;
     }
     .menuQuery button {
-        background: none;
-        color: #d1950e;
-        font-size: 1.5em;
+    background: none;
+    color: #d1950e;
+    font-size: 1.5em;
     }
     .menuQueryActive{
-        display: block;
+    display: block;
     }
     /*--------------CSS Header---------------------*/
     .menu-navegacion{
-        display: none;
-        text-align: end;
-        padding-top: 15px;
+    display: none;
+    text-align: end;
+    padding-top: 15px;
     }
     
     .menu-desplegable{
-        position: absolute;
-        height: 25vh;
-        width: 20%;
-        display: flex;
-        align-items: end;
-        flex-direction: column;
-        gap: 14px;
-        top: 25%;
-        right: 0px;
-        border: 1px solid gold;
-        padding: 10px;
-        opacity: 1;
-        pointer-events: all;
-
+    position: absolute;
+    height: 25vh;
+    width: 20%;
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    gap: 14px;
+    top: 25%;
+    right: 0px;
+    border: 1px solid gold;
+    padding: 10px;
+    z-index: 1;
     }
     .sMagosHechizos {
-        height: 100%;
+    height: 100%;
     }
     .sHijoMagosHechizos{
-        width: 80%;
-        height: 100%;
-        display: grid;
-        grid-template-columns: repeat(2,36vw);
-        grid-template-rows: repeat(2,46vh);
-        gap: 40px;
-        padding-bottom: 5vh;
+    width: 80%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,36vw);
+    grid-template-rows: repeat(2,46vh);
+    gap: 40px;
+    padding-bottom: 5vh;
     }
     .scontenedoresMain{
-        width: 100%;
+    width: 100%;
     }
     .sSizeLibros{
-        font-size: 1.4em;
+    font-size: 1.4em;
     }
     .sContainerLibrosJS{
-        width: 70%;
-        height: 91vh;
+    width: 70%;
+    height: 91vh;
     }
     select#filtroId{
-        position: absolute;
-        top: 20vh;
-        left: 2%;
-        background-color: #d1950e;
-        padding: 5px;
-        font-weight: bold;
-        border-radius: 5px;
+    position: absolute;
+    top: 20vh;
+    left: 2%;
+    background-color: #d1950e;
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 5px;
     }
     .menu-desplegable{
-        width: 24%;
+    width: 24%;
     }
     .sSizePersonajes{
-        grid-template-columns: repeat(2 , 42%);
+    grid-template-columns: repeat(2 , 42%);
     }
     .sSizeHechizos{
-        grid-template-columns: repeat(2 , 42%);
+    grid-template-columns: repeat(2 , 42%);
     }
     .mContenedorHechizos{
-        padding-top: 3vh;
+    padding-top: 3vh;
     }
     .sSizePosiones{
-        grid-template-columns: repeat(2 , 42%);
+    grid-template-columns: repeat(2 , 42%);
     }
     .mContenedorPociones{
-        padding-top: 3vh;
+    padding-top: 3vh;
     }
+    .creacionPoPup{
+    display:none;
+    position: fixed;
+    top: 19%;
+    left: 13%;
+    width: 74vw;
+    height: 76vh;
+    z-index: 1;
+}
+.creacionPoPupUno{
+    display: flex;
+    align-items: center;
+    background-color: goldenrod;
+    color: #000;
+    border-radius: 15px;
+}
+.creacionPoPup span {
+    position: absolute;
+    top: 4%;
+    font-size: 1.5rem;
+    right: 4%;
+}
+.hijoUnoCreacionPoPup{
+    width: 50%;
+}
+.hijoUnoCreacionPoPup img{
+    width: 77%;
+    border: 3px solid black;
+}
+.hijoDosCreacionPoPup{
+    width: 50%;
+    line-height: 70px;
+    font-size: 1.5rem;
+}
+.porcentajeDom{
+    position: absolute;
+    top: 20.5vh;
+    left: 19%;
+    color: red;
+    font-size: 1.4rem;
+}
 }
 
 /*mobile*/
@@ -444,12 +532,9 @@ input[type="submit"]{
     width: 68%;
 }
 .sTituloPrincipal h1 {
-    font-size: 9vw;
+    font-size: 8vw;
     font-weight: bold;
 }
-/* .contenedor-nav{
-    display: none;
-} */
 .sHijoMagosHechizos{
     display: flex;
     flex-direction: column;
@@ -479,8 +564,7 @@ input[type="submit"]{
     right: 0px;
     border: 1px solid gold;
     padding: 10px;
-    opacity: 1;
-    pointer-events: all;
+    z-index: 1;
 }
 .sSizePersonajes{
     grid-template-columns: repeat(1, 100%);
@@ -493,6 +577,52 @@ input[type="submit"]{
 .sSizePosiones{
     grid-template-columns: repeat(1, 100%);
     grid-template-rows: repeat(236, 232px);
+}
+.creacionPoPup{
+    display:none;
+    position: fixed;
+    top: 19%;
+    left: 13%;
+    width: 74vw;
+    max-height: max-content;
+    z-index: 1;
+}
+.creacionPoPupUno{
+    display: flex;
+    align-items: center;
+    background-color: goldenrod;
+    color: #000;
+    border-radius: 15px;
+    flex-direction: column;
+}
+.creacionPoPup span {
+    position: absolute;
+    top: 4%;
+    font-size: 1.2rem;
+    right: 4%;
+}
+.hijoUnoCreacionPoPup{
+    width: 50%;
+}
+.hijoUnoCreacionPoPup img{
+    width: 77%;
+    border: none;
+    padding-top: 10px;
+}
+.hijoDosCreacionPoPup{
+    width: 50%;
+    line-height: 47px;
+    font-size: 1.5rem;
+}
+.porcentajeDom{
+    position: absolute;
+    top: 20.5vh;
+    left: 32%;
+    color: red;
+    font-size: 1.2rem;
+}
+#BuscadorDePersonajes{
+    left: 49%;
 }
 
 } 

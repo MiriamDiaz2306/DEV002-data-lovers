@@ -15,14 +15,94 @@ De acuerdo a la investigación realizada por medio de internet, se logró defini
 
 En esta investigación, se logró definir las preferencias del usuario al revelarnos qué tipo de información deseaban encontrar en la página web. Las siguientes historias de usuario muestran de forma detalla todo lo que se pudo definir, los criterios de aceptación y definición de terminado para cumplir con los requerimientos de los usuarios.
 
-## PRIMERA HISTORIA DE USUSARIO
+## HISTORIAS DE USUSARIOS
+<br>
 
-Como fan de Harry Potter quiero conocer todos los personajes de Harry Potter y sobre todo los que eran de la especie humana.
+### primer usuario
+![prototipo](img/historiaUno.png)
+<br>
+<br>
 
-* criterios de aceptacion: <br>
-1. Encabezado con el nombre de la pagina <br>
-2. crear un home con las categorias de contenido que tendra la pagina.<br>
-3. las categorias serian las siguientes: libros, personajes, posiones, hechizos.<br>
-4. cuando seleccionen la categoria personaje, deben aparecer todos los personajes en columnas de tres.
+### Definión de terminado
+
+1. La pagina cuenta con un encabezado con el nombre de la escuela.
+2. la pagina tiene en el Home las cuatro opciones funcionales.
+3. el código de la parte del Home fué testeado obteniendo un 100% de manera general.
+4. la pagina cuenta con Mediaquerys para usuarios de laptop y Mobile.
+
+<br>
+
+![prototipo](img/fidelidadUno.jpg)
+![prototipo](img/altafidelidadUno.png)
+![prototipo](img/productofinalHome.png)
+
+<br>
+<br>
+
+### segundo usuario
+![prototipo](img/hostoriaDos.png)
+
+<br>
+<br>
+
+### Definición de terminado
+
+1. cuenta con una tarjeta de código funcional que contiene el nombre y la imagen de los personajes.
+2. estas tarjetas se acomodaron con una grid para las diferentes tipos de pantalla.
+3. El código tiene y pasa los test necesarios para mostrar todos los personajes.
+
+<br>
+
+![prototipo](img/fidelidadDos.jpg)
+![prototipo](img/altafidelidadDos.png)
+
+<br>
+<br>
+
+### Tercer ususario
+
+![prototipo](img/hostoriatres.png)
+
+<br>
+<br>
+
+### Definición de terminado
+
+1. cuenta con un select
+2. Se divide por clases: All, Humans, Not humans, Pure blood, Half blood.
+3. se puede organizar de orden alfabetico y visceversa.
+4. se logra pasar cada uno de los test sobre las filtraciones de las especies.
+
+<br>
+
+![prototipo](img/prototipófinalSelect.jpg)
+
+<br>
+<br>
+
+### Cuarto usuario
+
+![prototipo](img/historiacuatro.png)
+
+<br>
+
+### Definición de terminado
+
+<br>
+
+1. cuenta con un buscador
+2. la busqueda será por nombre
+3. se programó en el codigo que las búsquedas fueran sólo en minúsculas.
+4. el programa lanza el personaje buscado
+5. pasan los test sobre las funciones de busqueda
+
+<br>
+
+![prototipo](img/prototipofinalBuscador.jpg)
+
+
+
+
+
     
 
