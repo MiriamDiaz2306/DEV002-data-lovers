@@ -1,0 +1,630 @@
+@font-face {
+    font-family: 'Harry P';
+    src: url('./HarryP.woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+.HarryP{
+    font-family: 'Harry P';
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    border: none;
+    margin: 0;
+}
+header{
+    background-image: url(img/headerAdobe.jpg);
+}
+.sContainerHeader{
+    width: 100%;
+    display: flex;
+    height: 19vh;
+    background-color: #00000080;
+    align-items: center;
+    border-bottom: 2px solid #783e03;
+}
+.sLogoIzquierdo{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sLogoIzquierdo img{
+    width: 34%;
+    height: 75%;
+}
+.sTituloPrincipal{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+.sTituloPrincipal h1{
+    font-size: 7vw;
+    color: #d1950e;
+    text-shadow: -8px 12px 7px #700f03;
+    letter-spacing: 4px;
+}
+/*--------------CSS HEADER-----------------------*/
+select#filtroId{
+    position: absolute;
+    top: 20vh;
+    left: 2%;
+    background-color: #d1950e;
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 5px;
+    outline: none;
+}
+/*--------------CSS SELECT-----------------------*/
+.menu-navegacion{
+    display: none;
+    width: 100%;
+    background-color: #0a0401 !important;
+    text-align: end;
+    padding-top: 15px;
+}
+input.sBtnPersonajesNav{
+    color: #d1950e;
+    background-color: transparent;
+    padding-right: 2%;
+}
+/*--------------CSS Nav---------------------*/
+.sSize{
+    display: flex;
+    align-items: center;
+}
+.sMagosHechizos{
+    background-image: url(img/fondoTresDesktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 59.7vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 21vh;
+
+}
+.scontenedoresMain{
+    background-color: #00000080;
+    border: 1px solid #783e03;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 18%;
+}
+.sMago img{
+    width: 87%;
+    /*height: 30vh; */
+    padding-bottom: 2vh;
+}
+.sMago p{
+    color: goldenrod;
+}
+.sHechizos img{
+    width: 87%;
+}
+.sHechizos p{
+    color: goldenrod;
+}
+.mLibrosCasasHechizos{
+    width: 100%;
+    height: 40vh
+}
+.mHijoLibroCasasHechizos{
+    width: 100%;
+    height: 41vh;
+    display: flex;
+    justify-content: space-around;
+}
+.mLibros img{
+    width: 87%;
+}
+.mLibrosHijoMagosH p{
+    color: goldenrod;
+}
+.mHechizos img{
+    width: 87%;
+    }
+.mHechizos p{
+    color:goldenrod
+}
+/*------------------css primera parte main--------------*/
+.sPersonajes{
+    padding: 0 7% 20px 7%;
+    display: grid;
+    grid-template-columns: repeat(3,25%);
+    grid-template-rows: repeat(34,249px);
+    gap: 17px 12%;
+}
+.sBtnPersonajes{
+    background: transparent;
+    color: coral;
+    font-size: 1.3rem;
+}
+.sContainerDeHumanos{
+    background-color: #000;
+}
+.sNombres{
+    background-color: rgb(46, 27, 2);
+    color: darkgoldenrod;
+}
+.sContenidoTarjeta{
+    color: rgb(184, 74, 5);
+}
+.figureImage img{
+    width: 100px;
+}
+img:hover{
+    transform: scale(1.1);
+    transition: .2s;
+}
+/*------------------css personajes--------------*/
+.sContainerLibros{
+    background-color: #6f0000;
+}
+.sLibrosMain{
+    background-color: #000;
+}
+.sMainPrincipal{
+    display: none;
+}
+.sLibrosMain,
+.sPersonajesMain,
+.sHechizosMain,
+.sPosionesMain{
+    display: none;
+}
+.sLibrosMainAparecer,
+.sPersonajesMainAparecer,
+.sHechizosMainAparecer,
+.sPosionesMainAparecer{
+    display: block;
+    background-color:#0a0401;
+    width: 100%;
+}
+
+.sSizePersonajes{
+    background-color: #0a0401;
+    display: grid;
+    grid-template-columns: repeat(3 , 23%);
+    grid-template-rows: repeat(236,200px);
+    gap: 47px 13vw;
+    padding: 1% 8% 0 8%;
+    color: #d1950e;
+    text-align: center;
+}
+.tarjetasPersonajes{
+    background: linear-gradient(359deg, rgba(28,0,0) 0%, rgba(85,39,3,1) 77%);     
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+figure img {
+    width: 50%;
+}
+.grid_No_Humanos{
+    grid-template-rows: repeat(39,200px) !important;
+}
+.grid_Humanos{
+    grid-template-rows: repeat(196,200px) !important;
+}
+.grid_Puros{
+    grid-template-rows: repeat(23,200px) !important;
+}
+.grid_Impuros{
+    grid-template-rows: repeat(24,200px) !important;
+}
+/*------------------css personajes javaScript--------------*/
+.sSizeLibros{
+    display: flex;
+    gap: 10%;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 10%;
+}
+.sContainerLibrosJS{
+    background: linear-gradient(1deg, rgb(30,17,11) 0%, rgb(116,54,26) 77%);     
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: burlywood;
+    height: 65vh;
+    width: 27%;
+    margin-bottom: 5%;
+    text-align: center;
+    padding: 0px 37px;
+}
+.sContainerLibrosJS p{
+    text-align: justify;
+}
+.sContainerLibrosJS:hover{
+    background: linear-gradient(180deg, rgba(17,36,241,1) 0%, rgba(1,0,5,1) 100%);
+    transform: scale(1.1);
+    box-shadow: -2px 4px 20px 5px #b500e8;
+}
+/*CSS DE HECHIZOS*/
+.sSizeHechizos{
+    background-color: #0a0401;
+    display: grid;
+    grid-template-columns: repeat(3,23%);
+    grid-template-rows: repeat(102,200px);
+    gap: 47px 13vw;
+    padding: 1% 8% 2% 8%;
+
+}
+.mContenedorHechizos{
+    color: #d1950e;
+    background: linear-gradient(359deg, rgba(28,0,0) 0%, rgba(85,39,3,1) 77%);
+    text-align: center;
+    border-radius: 20px;
+}
+.mContenedorHechizos img {
+width: 52%;
+}
+
+/*CSS DE POCIONES*/
+.sSizePosiones{
+    background-color: #0a0401;
+    display: grid;
+    grid-template-columns: repeat(3,23%);
+    grid-template-rows: repeat(50,200px);
+    gap: 47px 13vw;
+    padding: 1% 8% 2% 8%;
+   
+}
+.mContenedorPociones {
+    color: #d1950e;
+    background: linear-gradient(359deg, rgba(28,0,0) 0%, rgba(85,39,3,1) 77%);
+    text-align: center;
+    border-radius: 20px;
+}
+.mContenedorPociones img{
+    width: 50%;
+
+}
+input[type="submit"]{
+    cursor: pointer;
+}
+#BuscadorDePersonajes{
+    height: 27px;
+    border-radius: 15px;
+    position: absolute;
+    top:20vh;
+    left: 38%;
+    background-color: #d1950e;
+    outline: none;
+    padding-left: 5px;
+    color: #783e03;
+}
+::placeholder{
+    padding-left: 5px;
+    color: #783e03;
+    font-weight: bold;
+}
+
+/* desktop */
+@media only screen and (min-width: 900px) {
+.menuQuery {
+       display: none;
+   }
+   .sNavMainAparecer{
+       display: block;
+       background-color:#0a0401;
+       width: 100%;
+       height: 6vh;
+   }
+   .sBtnPersonajes{
+    font-size: 2rem;
+   }
+   .sMago img{
+    width: 73%;
+   }
+   .sLogoIzquierdo img{
+    width: 37%;
+   }
+   .sHijoMagosHechizos{
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: space-around;
+   }
+   .creacionPoPup{
+    display:none;
+    background-color: gold;
+    position: fixed;
+    top: 13%;
+    left: 14%;
+    width: 73vw;
+    height: 86vh;
+    z-index: 1;
+}
+.creacionPoPup span {
+    position: absolute;
+    top: 4%;
+    font-size: 1.5rem;
+    right: 2%;
+}
+.creacionPoPupUno{
+    display: flex;
+    align-items: center;
+    background-color: goldenrod;
+    color: #000;
+    border-radius: 15px;
+}
+.hijoUnoCreacionPoPup{
+    width: 50%;
+}
+.hijoUnoCreacionPoPup img{
+    width: 77%;
+    border: 3px solid black;
+}
+.hijoDosCreacionPoPup{
+    width: 50%;
+    line-height: 70px;
+    font-size: 1.5rem;
+}
+.porcentajeDom{
+    position: absolute;
+    top: 20.5vh;
+    left: 12%;
+    color: red;
+    font-size: 1.4rem;
+}
+}
+
+/* tablet */
+@media only screen and ((max-width: 900px) and (min-width: 449px)) {
+    .menuQuery{
+    background-color: #0a0401;
+    text-align: end;
+    display: none;
+    }
+    .menuQuery button {
+    background: none;
+    color: #d1950e;
+    font-size: 1.5em;
+    }
+    .menuQueryActive{
+    display: block;
+    }
+    /*--------------CSS Header---------------------*/
+    .menu-navegacion{
+    display: none;
+    text-align: end;
+    padding-top: 15px;
+    }
+    
+    .menu-desplegable{
+    position: absolute;
+    height: 25vh;
+    width: 20%;
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    gap: 14px;
+    top: 25%;
+    right: 0px;
+    border: 1px solid gold;
+    padding: 10px;
+    z-index: 1;
+    }
+    .sMagosHechizos {
+    height: 100%;
+    }
+    .sHijoMagosHechizos{
+    width: 80%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,36vw);
+    grid-template-rows: repeat(2,46vh);
+    gap: 40px;
+    padding-bottom: 5vh;
+    }
+    .scontenedoresMain{
+    width: 100%;
+    }
+    .sSizeLibros{
+    font-size: 1.4em;
+    }
+    .sContainerLibrosJS{
+    width: 70%;
+    height: 91vh;
+    }
+    select#filtroId{
+    position: absolute;
+    top: 20vh;
+    left: 2%;
+    background-color: #d1950e;
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 5px;
+    }
+    .menu-desplegable{
+    width: 24%;
+    }
+    .sSizePersonajes{
+    grid-template-columns: repeat(2 , 42%);
+    }
+    .sSizeHechizos{
+    grid-template-columns: repeat(2 , 42%);
+    }
+    .mContenedorHechizos{
+    padding-top: 3vh;
+    }
+    .sSizePosiones{
+    grid-template-columns: repeat(2 , 42%);
+    }
+    .mContenedorPociones{
+    padding-top: 3vh;
+    }
+    .creacionPoPup{
+    display:none;
+    position: fixed;
+    top: 19%;
+    left: 13%;
+    width: 74vw;
+    height: 76vh;
+    z-index: 1;
+}
+.creacionPoPupUno{
+    display: flex;
+    align-items: center;
+    background-color: goldenrod;
+    color: #000;
+    border-radius: 15px;
+}
+.creacionPoPup span {
+    position: absolute;
+    top: 4%;
+    font-size: 1.5rem;
+    right: 4%;
+}
+.hijoUnoCreacionPoPup{
+    width: 50%;
+}
+.hijoUnoCreacionPoPup img{
+    width: 77%;
+    border: 3px solid black;
+}
+.hijoDosCreacionPoPup{
+    width: 50%;
+    line-height: 70px;
+    font-size: 1.5rem;
+}
+.porcentajeDom{
+    position: absolute;
+    top: 20.5vh;
+    left: 19%;
+    color: red;
+    font-size: 1.4rem;
+}
+}
+
+/*mobile*/
+@media only screen and ((max-width: 449px) and (min-width: 300px)) {
+.menuQuery{
+    background-color: #0a0401;
+    text-align: end;
+    display: none;
+}
+.menuQueryActive{
+     display: block;
+}
+.menuQuery button {
+    background: none;
+    color: #d1950e;
+    font-size: 1.5em;
+}
+.sLogoIzquierdo{
+    width: 19%;
+    height: 15vh;
+}
+.sLogoIzquierdo{
+    width: 23%;
+}
+.sLogoIzquierdo img{
+    width: 68%;
+}
+.sTituloPrincipal h1 {
+    font-size: 8vw;
+    font-weight: bold;
+}
+.sHijoMagosHechizos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.sMagosHechizos{
+    height: max-content;
+    padding-top: 5vh;
+    padding-bottom: 4vh;
+}
+.scontenedoresMain{
+    width: 67%;
+}
+.sContainerLibrosJS{
+    width: 75%;
+}
+.menu-desplegable{
+    position: absolute;
+    height: 25vh;
+    width: 38%;
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    gap: 14px;
+    top: 25%;
+    right: 0px;
+    border: 1px solid gold;
+    padding: 10px;
+    z-index: 1;
+}
+.sSizePersonajes{
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: repeat(236, 232px);
+}
+.sSizeHechizos{
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: repeat(236, 232px);
+}
+.sSizePosiones{
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: repeat(236, 232px);
+}
+.creacionPoPup{
+    display:none;
+    position: fixed;
+    top: 19%;
+    left: 13%;
+    width: 74vw;
+    max-height: max-content;
+    z-index: 1;
+}
+.creacionPoPupUno{
+    display: flex;
+    align-items: center;
+    background-color: goldenrod;
+    color: #000;
+    border-radius: 15px;
+    flex-direction: column;
+}
+.creacionPoPup span {
+    position: absolute;
+    top: 4%;
+    font-size: 1.2rem;
+    right: 4%;
+}
+.hijoUnoCreacionPoPup{
+    width: 50%;
+}
+.hijoUnoCreacionPoPup img{
+    width: 77%;
+    border: none;
+    padding-top: 10px;
+}
+.hijoDosCreacionPoPup{
+    width: 50%;
+    line-height: 47px;
+    font-size: 1.5rem;
+}
+.porcentajeDom{
+    position: absolute;
+    top: 20.5vh;
+    left: 32%;
+    color: red;
+    font-size: 1.2rem;
+}
+#BuscadorDePersonajes{
+    left: 49%;
+}
+
+} 
+
+

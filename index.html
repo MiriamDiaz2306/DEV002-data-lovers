@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="#">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div id="root" class="sFondo">
+    <header>
+      <section class="sContainerHeader">
+        <div class="sLogoIzquierdo">
+          <img src="img/logoHogwarst.png" alt="logoDeHogwarst">
+        </div>
+        <div class="sTituloPrincipal">
+          <h1 class="HarryP">
+            Hogwarts School 
+          </h1>
+        </div>
+        <div class="sLogoIzquierdo">
+          <img src="img/logoHogwarst.png" alt="logoDeHogwarst">
+        </div>
+      </section>
+    </header>
+    <div class="contenedor-nav">
+      <nav class="menu-navegacion" id="menu-navegacion">
+        <input type="submit" class="sBtnPersonajesNav" id="sBtnLibrosNav" value="Libros">
+        <input type="submit" class="sBtnPersonajesNav" id="sBtnPersonajessNav" value="Personajes">
+        <input type="submit" class="sBtnPersonajesNav" id="sBtnHechizosNav" value="Hechizos">
+        <input type="submit" class="sBtnPersonajesNav" id="sBtnPosionesNav" value="Pociones">
+        <input type="submit" class="sBtnPersonajesNav" id="sBtnMenuPrincipalNav" value="Volver al menu Principal">
+      </nav>
+      <nav class="menuQuery" id="menuQuery">
+        <button><i class="fa-solid fa-bars"></i></button>
+      </nav>
+  </div>
+    <main id="sSize" class="sSize">
+      <section class="sMagosHechizos" id="sMagosHechizos">
+        <div class="sHijoMagosHechizos">
+          <div class="mLibros scontenedoresMain">
+            <img src="img/libros.png" alt="Libros">
+            <input type="submit" class="sBtnPersonajes HarryP" id="sBtnLibros" value="Libros">
+          </div>
+          <div class="sMago scontenedoresMain">
+            <img src="img/personajes.png" alt="Personajes">
+            <input type="submit" class="sBtnPersonajes  HarryP" id="sBtnPersonajes" value="Personajes">
+          </div>
+          <div class="mHechizos scontenedoresMain">
+            <img src="img/hechizos.png" alt="Hechizos">
+            <input type="submit" class="sBtnPersonajes  HarryP" id="sBtnHechizos" value="Hechizos">
+          </div>
+          <div class="sHechizos scontenedoresMain">
+            <img src="img/posiones.png" alt="posiones">
+            <input type="submit" class="sBtnPersonajes  HarryP" id="sBtnPosiones" value="Pociones">
+          </div>
+        </div>
+      </section>
+      <section class="sLibrosMain" id="sLibrosMain">
+        <div class="sSizeLibros">
+        </div>
+      </section>
+      <section class="sPersonajesMain" id="sPersonajesMain">
+        <select name="filtro" id="filtroId">
+          <option selected value="alls">All</option>
+          <option value="a_z">A - Z</option>
+          <option value="z_a">Z - A</option>
+          <option value="Humans">Humans</option>
+          <option value="Not_Humans">Not Humans</option>
+          <option value="sangre_Pura">Pure Blood</option>
+          <option value="sangre_Impura">Half Blood</option>
+        </select>
+        <span id="porcentajeDom" class="porcentajeDom"></span>
+        <input type="search" id="BuscadorDePersonajes" placeholder="Buscar">
+          <div class="sSizePersonajes">
+            
+          </div>
+      </section>
+      <section class="sHechizosMain" id="sHechizosMain">
+        <div class="sSizeHechizos">
+        </div>
+      </section>
+      <section class="sPosionesMain" id="sPosionesMain">
+        <div class="sSizePosiones">
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="main.js" type="module"></script>
+</body>
+</html>
