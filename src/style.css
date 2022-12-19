@@ -136,7 +136,7 @@ input.sBtnPersonajesNav{
 .sPersonajes{
     padding: 0 7% 20px 7%;
     display: grid;
-    grid-template-columns: repeat(3,25%);
+    grid-template-columns: repeat(3,25%); /*personajesAlfiltrarconselect*/
     grid-template-rows: repeat(34,249px);
     gap: 17px 12%;
 }
@@ -267,8 +267,7 @@ figure img {
 .mContenedorHechizos img {
 width: 52%;
 }
-
-/*CSS DE POCIONES*/
+/*---------------CSS DE POCIONES-------------------------*/
 .sSizePosiones{
     background-color: #0a0401;
     display: grid;
@@ -276,7 +275,6 @@ width: 52%;
     grid-template-rows: repeat(50,200px);
     gap: 47px 13vw;
     padding: 1% 8% 2% 8%;
-   
 }
 .mContenedorPociones {
     color: #d1950e;
@@ -286,9 +284,8 @@ width: 52%;
 }
 .mContenedorPociones img{
     width: 50%;
-
 }
-input[type="submit"]{
+input[type="submit"]{    /*Este es un selector de atributo*/
     cursor: pointer;
 }
 #BuscadorDePersonajes{
@@ -308,7 +305,7 @@ input[type="submit"]{
     font-weight: bold;
 }
 
-/* desktop */
+/* ------------------ desktop -----------------*/
 @media only screen and (min-width: 900px) {
 .menuQuery {
        display: none;
@@ -378,7 +375,7 @@ input[type="submit"]{
 }
 }
 
-/* tablet */
+/* ------------------ tablet -----------------*/
 @media only screen and ((max-width: 900px) and (min-width: 449px)) {
     .menuQuery{
     background-color: #0a0401;
@@ -506,7 +503,7 @@ input[type="submit"]{
 }
 }
 
-/*mobile*/
+/*--------------------------- mobile ----------------------*/
 @media only screen and ((max-width: 449px) and (min-width: 300px)) {
 .menuQuery{
     background-color: #0a0401;

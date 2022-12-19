@@ -109,11 +109,11 @@ navMenuQuery.addEventListener("click", () => {
     nav_acesso.classList.add("menu-desplegable")
 })
 
-// Tarjeta Vacia
+// Tarjeta Vacia  //select
 const tarjetasDePersonajes = (tarjeta) => {
-    let almacenTarjetas = [];
+    const almacenTarjetas = [];
     
-    tarjeta.forEach(elemt => {
+    tarjeta.map(elemt => {
     let creacionDiv = document.createElement("div");
     creacionDiv.classList.add("tarjetasPersonajes");
     let creacionFigure = document.createElement("figure");
@@ -174,7 +174,7 @@ const tarjetasDePersonajes = (tarjeta) => {
 //tarjetas que se ven
 const allCharacters = () => {
     //iteramos los personajes y pasan a ser elemt para imprimirlos en su div  
-    characters.forEach(elemt => {
+    characters.map(elemt => {
     let creacionDiv = document.createElement("div");
     creacionDiv.classList.add("tarjetasPersonajes")
     let creacionFigure = document.createElement("figure");
@@ -203,8 +203,9 @@ const allCharacters = () => {
         creacionDiv.appendChild(creacionFigure);
         creacionDiv.appendChild(nombres)
 
-        creacionDiv.appendChild(creacionPoPup)
 
+        //desde aquí comienza el poPup de personajes
+        creacionDiv.appendChild(creacionPoPup)
         creacionPoPup.appendChild(hijoUnoCreacionPoPup);
         creacionPoPup.appendChild(hijoDosCreacionPoPup);
         creacionPoPup.appendChild(iconoSalir);
@@ -393,7 +394,7 @@ idPociones()
 
 //Buscador input personajes
 buscadorInput.addEventListener("input",(event)=>{
-    sContainerSectionPersonajes.innerHTML=" "
+    sContainerSectionPersonajes.innerHTML=" "                 //obtener
     let personaBuscar= buscadorDePersonajes(characters,event.target.value)
     let buscandoNombre=tarjetasDePersonajes(personaBuscar)
     buscandoNombre.forEach(elemt=>{

@@ -49,5 +49,6 @@ export const informacionPotions= (potions)=> {
 //Buscador de personajes
  export const buscadorDePersonajes=(data,buscarNombreDePersonajes)=>{
   const allPersonajes= data.filter(personajes => personajes.name.toLowerCase().startsWith(buscarNombreDePersonajes))
-  return allPersonajes;
- }
+  return allPersonajes; 
+ }                                                                             //devuelve un boolean si el nombre existe o no en el objeto
+      
