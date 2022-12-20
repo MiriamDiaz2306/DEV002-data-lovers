@@ -21,53 +21,89 @@ const characters = [
   {
     "name": "Harry Potter",
     "species": "Human",
-    "ancestry": "Half-blood",
+    "ancestry": "Pure-blood",
     "house": "Gryffindor"
   },
   {
     "name": "Sandra rios",
     "species": "Acromantula",
-    "ancestry": "null",
+    "ancestry": "Muggle",
     "house": "valledupar"
   },
   {
     "name": "Sebastian",
     "species": "Peacok",
-    "ancestry": "null",
+    "ancestry": "Pure-blood",
     "house": "valledupar"
   },
   {
     "name": "Euan Abercrombie",
     "species": "Human",
-    "ancestry": "null",
+    "ancestry": "Muggle",
     "house": "Gryffindor"
   },
   {
     "name": "Carl Mousak",
     "species": "Centaur",
-    "ancestry": "null",
+    "ancestry": "Muggle",
     "house": "Hufflepuff"
   }
 ]
 //filtramos todos los humanos
-describe ('filtro de Humanos', () => {   /* método que nos ayuda acrear bloques que agrupan pruebas rel */
+describe ('personajes', () => {   /* método que nos ayuda acrear bloques que agrupan pruebas rel */
   it("is a function", () => {            /* Recibe la callBack para evaluar lo que espera*/
     expect(typeof personajes).toBe("function"); /* tipos de datos primitivo */
   });
 
   it('devuelve humanos', () => {
-    expect(personajes(characters).length).toEqual(2); /* valores compuestos: objetos,arrays... */
+    const resultadoHumanos=[
+      
+        {
+          "name": "Harry Potter",
+          "species": "Human",
+          "ancestry": "Pure-blood",
+          "house": "Gryffindor"
+        }, 
+        {
+          "name": "Euan Abercrombie",
+          "species": "Human",
+          "ancestry": "Muggle",
+          "house": "Gryffindor"
+        }
+      
+    ]
+    expect(personajes(characters,'human')).toEqual(resultadoHumanos); /* valores compuestos: objetos,arrays... */
   });
 
 });
 //Filtramos No Humanos
-describe('filtro de no Humanos', () => {
+describe('personajes_No_Humanos', () => {
   it("is a function", () => {
     expect(typeof personajes_No_Humanos).toBe("function");
   });
 
   it('devuelve no humanos', () => {
-    expect(personajes_No_Humanos(characters).length).toEqual(3);
+   const resultadoNoHumanos= [
+    {
+      "name": "Sandra rios",
+      "species": "Acromantula",
+      "ancestry": "Muggle",
+      "house": "valledupar"
+    },
+    {
+      "name": "Sebastian",
+      "species": "Peacok",
+      "ancestry": "Pure-blood",
+      "house": "valledupar"
+    },
+    {
+      "name": "Carl Mousak",
+      "species": "Centaur",
+      "ancestry": "Muggle",
+      "house": "Hufflepuff"
+    }
+    ]
+    expect(personajes_No_Humanos(characters,"No human")).toEqual(resultadoNoHumanos);
   });
 });
 const books = [
@@ -224,45 +260,28 @@ describe('Orden Alfabetico Reverse', () =>{
   });
 });
 
-const sangrePuraImpura = [
-  {
-    "name": "Arkie Alderton",
-    "species": "Human",
-    "ancestry": "Pure-blood"
-  },
-  {
-    "name": "Little Whinging postman",
-    "species": "Human",
-    "ancestry": "Muggle"
-  },
-  {
-    "name": "Myrtle Warren's father",
-    "species": "Human",
-    "ancestry": "Muggle"
-  },
-  {
-    "name": "Gregory Goyle",
-    "species": "Human",
-    "ancestry": "Pure-blood"
-  },
-  {
-    "name": "Hugo Granger-Weasley",
-    "species": "Human",
-    "ancestry": "Muggle"
-  },
-  {
-    "name": "Wilfred the Wistful",
-    "species": "Human",
-    "ancestry": "Pure-blood"
-  }
-]
+
 //Filtrar sangre pura e impura
 describe('Personajes de sangre pura', () =>{
   it('is a function', () =>{
     expect(typeof pureSpecies).toBe("function")
   });
   it('personajes puros', () =>{
-    expect(pureSpecies(sangrePuraImpura).length).toEqual(3)
+    const resultadoPersonajesPuros=[
+      {
+        "name": "Harry Potter",
+        "species": "Human",
+        "ancestry": "Pure-blood",
+        "house": "Gryffindor"
+      },
+      {
+        "name": "Sebastian",
+        "species": "Peacok",
+        "ancestry": "Pure-blood",
+        "house": "valledupar"
+      }
+    ]
+    expect(pureSpecies(characters,"Pure-blood")).toEqual(resultadoPersonajesPuros)
   });
 });
 describe('Personajes de sangre impura', () =>{
@@ -270,7 +289,27 @@ describe('Personajes de sangre impura', () =>{
     expect(typeof dirtyBlood).toBe("function")
   });
   it('Personajes Impuros', () =>{
-    expect(dirtyBlood(sangrePuraImpura).length).toEqual(3)
+    const resultadoDirtyBlood=[
+      {
+        "name": "Sandra rios",
+        "species": "Acromantula",
+        "ancestry": "Muggle",
+        "house": "valledupar"
+      },
+      {
+        "name": "Euan Abercrombie",
+        "species": "Human",
+        "ancestry": "Muggle",
+        "house": "Gryffindor"
+      },
+      {
+        "name": "Carl Mousak",
+        "species": "Centaur",
+        "ancestry": "Muggle",
+        "house": "Hufflepuff"
+      }
+    ]
+    expect(dirtyBlood(characters,"Muggle")).toEqual(resultadoDirtyBlood)
   });
 });
 
@@ -402,23 +441,24 @@ const input= [
   }
 
 ]
-const buscarNombreDePersonajes=[
-  { 
-    name: "Euan Abercrombie",
-    gender: "Male",
-    house: "Gryffindor"
-  },
-  {
-    name: "Edgar Bones",
-    gender: "Male",
-    house: "Hufflepuff (possibly)"
-  }
-]
+
 describe('Buscar nombres de personajes',()=>{
   it("buscadorDePersonajes is a function",() =>{
     expect(typeof buscadorDePersonajes).toBe("function")
   });
   it('Devuelve el nombre del persona a buscar',()=>{
+    const buscarNombreDePersonajes=[
+      { 
+        name: "Euan Abercrombie",
+        gender: "Male",
+        house: "Gryffindor"
+      },
+      {
+        name: "Edgar Bones",
+        gender: "Male",
+        house: "Hufflepuff (possibly)"
+      }
+    ]
     expect(buscadorDePersonajes(input,"e")).toEqual(buscarNombreDePersonajes);
   });
 });
