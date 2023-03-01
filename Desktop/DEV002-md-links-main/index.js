@@ -1,4 +1,3 @@
-
 const {
   pathExist,
   toAbsolute,
@@ -7,7 +6,7 @@ const {
   getLinks,
   findMdFiles,
 
-} = require('./functions');
+} = require('./function');
 
 
 const mdLinks = (path, options) => {

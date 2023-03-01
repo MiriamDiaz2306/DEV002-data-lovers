@@ -13,6 +13,16 @@ const toAbsolute = (route) => {
   return route;
 };
 
+// es un archivo md?
+const mdFile = (absolutePath) => {
+  if (path.extname(absolutePath) === '.md') {
+      return true
+  } else {
+      return false
+  }
+}
+
+
 // es un archivo md o directorio?
 
 
@@ -130,5 +140,4 @@ module.exports = {
     validateLinks,
     getStats,
     getStatsAndValidate,
-    getMdFile
 }
